@@ -1,92 +1,90 @@
-const card = [
+const cardarr = [
     {
-        "data": "cheeseburger",
+
         "name": "Cheese Burger",
         "img": "cheeseburger.png",
     },
     {
-        "data": "fries",
+
         "name": "fries",
         "img": "fries.png",
     },
 
     {
-        "data": "hotdog",
+
         "name": "hotdog",
         "img": "hotdog.png",
     },
 
     {
-        "data": "icecream",
+
         "name": "Ice Cream",
         "img": "ice-cream.png",
     },
 
     {
-        "data": "milkshake",
+
         "name": "Milkshake",
         "img": "milkshake.png",
     },
 
     {
-        "data": "pizza",
+
         "name": "Pizza",
         "img": "pizza.png",
     },
     {
-        "data": "cheeseburger",
+
         "name": "Cheese Burger",
         "img": "cheeseburger.png",
     },
     {
-        "data": "fries",
+
 
         "name": "fries",
         "img": "fries.png",
     },
 
     {
-        "data": "hotdog",
         "name": "hotdog",
         "img": "hotdog.png",
     },
 
     {
-        "data": "icecream",
         "name": "Ice Cream",
         "img": "cheeseburger.png",
     },
 
     {
-        "data": "milkshake",
         "name": "Milkshake",
         "img": "milkshake.png",
     },
 
     {
-        "data": "pizza",
         "name": "Pizza",
         "img": "pizza.png",
     },
 
 ]
-card.sort(() => 0.5 - Math.random())
+cardarr.sort(() => 0.5 - Math.random())
 
+let displayGrid = document.getElementById('grid')
 
-let gridDisplay = document.getElementById('grid')
+function displayCard() {
+    for (let i = 0; i < cardarr.length; i++) {
+        let card = document.createElement('img')
+        // console.log(card)
+        card.setAttribute('src', 'blank.png')
+        // console.log(card)
+        card.setAttribute('data-id', i)
+        displayGrid.appendChild(card)
 
-function cardDisplay(card) {
-
-    let display = card.map(function (item) {
-
-        return `<div class="div"><img src="blank.png"  data-id=${item.data}/></div>`
-
-    }).join('')
-    console.log(display)
-    gridDisplay.innerHTML = display
+    }
 }
+displayCard()
 
-cardDisplay(card)
+
+
 
 
 
