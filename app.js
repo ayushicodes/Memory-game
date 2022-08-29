@@ -52,7 +52,7 @@ const cardarr = [
 
     {
         "name": "Ice Cream",
-        "img": "cheeseburger.png",
+        "img": "ice-cream.png",
     },
 
     {
@@ -66,22 +66,46 @@ const cardarr = [
     },
 
 ]
-cardarr.sort(() => 0.5 - Math.random())
 
+
+cardarr.sort(() => 0.5 - Math.random())
+let cardChoosen = []
 let displayGrid = document.getElementById('grid')
+
+
+
 
 function displayCard() {
     for (let i = 0; i < cardarr.length; i++) {
         let card = document.createElement('img')
-        // console.log(card)
         card.setAttribute('src', 'blank.png')
-        // console.log(card)
         card.setAttribute('data-id', i)
+        card.addEventListener('click', flipCard)
         displayGrid.appendChild(card)
-
     }
 }
 displayCard()
+
+
+
+
+function flipCard() {
+    let cardId = this.getAttribute('data-id')
+    cardChoosen.push(cardarr[cardId].name)
+    this.setAttribute('src', cardarr[cardId].img)
+    if (cardChoosen.length === 2) {
+        setTimeout(checkMatch, 500)
+    }
+}
+
+
+
+
+function checkMatch() {
+
+}
+
+
 
 
 
