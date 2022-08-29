@@ -93,14 +93,17 @@ createBoard()
 function checkForMatch() {
     const cards = document.querySelectorAll('img')
     if (cardsChosenId[0] === cardsChosenId[1]) {
+
         alert('you have clicked the same card')
     }
 
     else if (cardsChosen[0] === cardsChosen[1]) {
+
         cards[cardsChosenId[0]].setAttribute('src', 'white.png')
         cards[cardsChosenId[1]].setAttribute('src', 'white.png')
         cards[cardsChosenId[0]].removeEventListener('click', flipCard)
         cards[cardsChosenId[1]].removeEventListener('click', flipCard)
+        cardsWon.push(cardsChosen)
     }
     else {
         cards[cardsChosenId[0]].setAttribute('src', "blank.png")
@@ -108,7 +111,13 @@ function checkForMatch() {
     }
     cardsChosen = []
     cardsChosenId = []
+    resultDisplay.textContent = cardsWon.length
+    if (cardsWon.length === cardArray.length / 2) {
+        resultDisplay.textContent = 'You have matched it all'
+    }
 }
+
+
 
 //flip your card
 function flipCard() {
