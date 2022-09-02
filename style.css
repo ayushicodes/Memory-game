@@ -1,5 +1,14 @@
-#grid {
+.grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+
+}
+
+.score {
+    letter-spacing: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
 }
