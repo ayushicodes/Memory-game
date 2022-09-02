@@ -76,18 +76,28 @@ let cardsChosen = []
 let cardsChosenId = []
 let cardsWon = []
 
+window.addEventListener('DOMContentLoaded', function () {
+    grid.style.height = "650px"
+    grid.style.width = "680px"
+    createBoard()
+})
+
 //create your board
 function createBoard() {
     for (let i = 0; i < cardArray.length; i++) {
         const card = document.createElement('img')
-        console.log(card)
+
         card.setAttribute('src', 'blank.png')
+        card.style.height = "150px"
+        card.style.borderRadius = "10px"
+        card.style.padding = "10px"
+
         card.setAttribute('data-id', i)
         card.addEventListener('click', flipCard)
         grid.appendChild(card)
     }
 }
-createBoard()
+// createBoard()
 
 //check for matches
 function checkForMatch() {
