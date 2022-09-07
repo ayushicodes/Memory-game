@@ -18,3 +18,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
 }
+
+img {
+    margin: 2%;
+}
